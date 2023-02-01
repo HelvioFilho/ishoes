@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "iShoes",
+    "slug": "iShoes",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/main/icon.png",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "splash": {
+      "image": "./src/assets/main/splash.png",
+      "backgroundColor": "#000000",
+      "resizeMode": "contain"
+    },
+    "androidStatusBar": {
+      "barStyle": "light-content"
+    },
+    "android": {
+      "package": "com.hsvf.ishoes"
+    },
+    "ios": {
+      "bundleIdentifier": "com.hsvf.ishoes"
+    },
+    "description": "",
+    "githubUrl": "https://github.com/HelvioFilho/ishoes"
+  }
+}
