@@ -22,7 +22,7 @@
     "ios": {
       "bundleIdentifier": "com.hsvf.ishoes"
     },
-    "description": "",
+    "description": "iShoes is an online shoes sales app.",
     "githubUrl": "https://github.com/HelvioFilho/ishoes"
   }
 }
