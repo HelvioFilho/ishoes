@@ -40,6 +40,7 @@ export async function storageProductSave(newProduct: StorageCartProps) {
 
     const productsUpdated = JSON.stringify(products);
     await AsyncStorage.setItem(CART_STORAGE, productsUpdated);
+    return products;
 
   } catch (error) {
     throw error;
@@ -50,8 +51,8 @@ export async function storageProductRemove(productId: string) {
   try {
     let products = await storageProductGetAll();
 
-    const productsUpdated = JSON.stringify(products.filter(product => product.id !== productId));
-    await AsyncStorage.setItem(CART_STORAGE, productsUpdated);
+    const productsUpdated = products.filter(product => product.id !== productId);
+    await AsyncStorage.setItem(CART_STORAGE, JSON.stringify(productsUpdated));
     return productsUpdated;
 
   } catch (error) {

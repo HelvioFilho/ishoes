@@ -1,9 +1,10 @@
-import { Loading } from "@components/Loading";
+import { StatusBar } from "react-native";
+import { NativeBaseProvider } from "native-base";
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from "@expo-google-fonts/roboto";
 import { Home } from "@screens/Home";
-import { NativeBaseProvider } from "native-base";
-import { StatusBar } from "react-native";
+import { Loading } from "@components/Loading";
 import { theme } from "./src/theme";
+import { CartContextProvider } from "src/context/CartContext";
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
@@ -15,7 +16,9 @@ export default function App() {
         backgroundColor='transparent'
         translucent
       />
-      {fontsLoaded ? <Home /> : <Loading />}
+      <CartContextProvider>
+        {fontsLoaded ? <Home /> : <Loading />}
+      </CartContextProvider>
     </NativeBaseProvider>
   );
 }
