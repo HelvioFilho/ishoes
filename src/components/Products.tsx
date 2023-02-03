@@ -2,6 +2,7 @@ import { FlatList, VStack } from 'native-base';
 import { HeaderList } from './HeaderList';
 
 import { ProductCard, ProductProps } from './ProductCard';
+import { useNavigation } from '@react-navigation/native';
 import { PRODUCTS } from '@utils/data/products';
 
 type ProductsProps = {
@@ -10,6 +11,8 @@ type ProductsProps = {
 }
 
 export function Products({ data, brand }: ProductsProps) {
+  const { navigate } = useNavigation();
+
   return (
     <VStack flex={1}>
       <HeaderList
@@ -22,7 +25,7 @@ export function Products({ data, brand }: ProductsProps) {
         renderItem={({ item }) => (
           <ProductCard
             data={item}
-            onPress={() => { }}
+            onPress={() => navigate('details', { productId: item.id })}
           />
         )}
         numColumns={2}
