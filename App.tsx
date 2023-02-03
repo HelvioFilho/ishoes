@@ -1,9 +1,11 @@
 import { StatusBar } from "react-native";
 import { NativeBaseProvider } from "native-base";
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from "@expo-google-fonts/roboto";
-import { Home } from "@screens/Home";
+
+import { Routes } from "@routes/index";
 import { Loading } from "@components/Loading";
 import { theme } from "./src/theme";
+
 import { CartContextProvider } from "src/context/CartContext";
 
 export default function App() {
@@ -17,7 +19,7 @@ export default function App() {
         translucent
       />
       <CartContextProvider>
-        {fontsLoaded ? <Home /> : <Loading />}
+        {fontsLoaded ? <Routes /> : <Loading />}
       </CartContextProvider>
     </NativeBaseProvider>
   );
