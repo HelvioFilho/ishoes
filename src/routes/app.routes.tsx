@@ -4,6 +4,7 @@ import { Ionicons, Feather } from '@expo/vector-icons';
 
 import { Home } from "@screens/Home";
 import { Cart } from "@screens/Cart";
+import { Details } from "@screens/Details";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -36,6 +37,11 @@ export function AppRoutes() {
         options={{
           tabBarIcon: ({ color }) => <Feather name='shopping-bag' size={sizes[6]} color={color} />,
         }}
+      />
+      <Screen
+        name='details'
+        component={Details}
+        options={{ tabBarButton: () => null }}
       />
     </Navigator>
   )
