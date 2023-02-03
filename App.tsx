@@ -6,7 +6,7 @@ import { Routes } from "@routes/index";
 import { Loading } from "@components/Loading";
 import { theme } from "./src/theme";
 
-import { CartContextProvider } from "src/context/CartContext";
+import { CartContextProvider } from "@contexts/CartContext";
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
