@@ -74,7 +74,7 @@ export function Details() {
           w={56}
           h={56}
           alignSelf='center'
-          alt={product.name}
+          alt='Imagem do produto'
           source={product.image}
           key={String(new Date().getTime())}
           resizeMode={Platform.OS === 'android' ? 'contain' : 'cover'}

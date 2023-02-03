@@ -31,7 +31,7 @@ export function ItemCartCard({ onRemove, data }: ItemCartCardProps) {
         w={16}
         h={16}
         source={data.image}
-        alt={data.name}
+        alt='Imagem do produto'
         resizeMode={Platform.OS === 'android' ? 'contain' : 'cover'}
       />
       <VStack flex={1} ml={2}>

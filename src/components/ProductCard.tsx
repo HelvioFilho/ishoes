@@ -19,7 +19,7 @@ type ProductCardProps = TouchableOpacityProps & {
 
 export function ProductCard({ data, ...rest }: ProductCardProps) {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity {...rest}>
       <VStack
         w={40}
         h={40}
@@ -32,7 +32,7 @@ export function ProductCard({ data, ...rest }: ProductCardProps) {
         <Image
           flex={1}
           source={data.thumb}
-          alt={data.name}
+          alt='Thumbnail do produto'
           resizeMode='cover'
         />
         <Heading

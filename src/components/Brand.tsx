@@ -26,7 +26,7 @@ export function Brand({ image, isActive, ...rest }: BrandProps) {
     >
       <Image
         source={image}
-        alt='Brand image'
+        alt='Imagem da brand'
         w={20}
         h={7}
         resizeMode={Platform.OS === 'android' ? 'contain' : 'cover'}
