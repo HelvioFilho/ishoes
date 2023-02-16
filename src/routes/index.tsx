@@ -14,6 +14,9 @@ const linking = {
         parse: {
           productId: (productId: string) => productId
         }
+      },
+      cart: {
+        path: 'cart'
       }
     }
   }
@@ -21,17 +24,17 @@ const linking = {
 
 export function Routes() {
   const [notification, setNotification] = useState<OSNotification>();
-  
+
   const { colors } = useTheme();
   const theme = DefaultTheme;
   theme.colors.background = colors.gray[700];
 
   useEffect(() => {
     const unsubscribe = OneSignal
-    .setNotificationWillShowInForegroundHandler((notificationReceivedEvent: NotificationReceivedEvent) => {
-      const response = notificationReceivedEvent.getNotification();
-      setNotification(response);
-    })
+      .setNotificationWillShowInForegroundHandler((notificationReceivedEvent: NotificationReceivedEvent) => {
+        const response = notificationReceivedEvent.getNotification();
+        setNotification(response);
+      })
 
     return () => unsubscribe;
 
@@ -42,7 +45,7 @@ export function Routes() {
       <AppRoutes />
       {
         notification?.title &&
-        <Notification 
+        <Notification
           data={notification}
           onClose={() => setNotification(undefined)}
         />

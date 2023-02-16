@@ -17,6 +17,10 @@ export function tagUserInfoCreate(userInfo: UserInfoProps) {
   OneSignal.sendTags(userInfo);
 }
 
+export function tagCarUpdate(itemsCount: string) {
+  OneSignal.sendTag('cart_items_count', itemsCount);
+}
+
 export function hasNotificationOpened() {
   return OneSignal.setNotificationOpenedHandler((response) => {
     const { actionId } = response.action as any;
