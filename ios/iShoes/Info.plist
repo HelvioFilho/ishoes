@@ -25,6 +25,7 @@
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
+          <string>iShoes</string>
           <string>com.hsvf.ishoes</string>
         </array>
       </dict>
