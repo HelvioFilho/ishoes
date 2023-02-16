@@ -6,12 +6,14 @@ import {
   Pressable
 } from 'native-base';
 import { Feather } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 type ScreenHeaderProps = {
   title: string;
 }
 
 export function ScreenHeader({ title }: ScreenHeaderProps) {
+  const { goBack } = useNavigation();
   return (
     <HStack
       pb={6}
@@ -20,7 +22,7 @@ export function ScreenHeader({ title }: ScreenHeaderProps) {
       bg='gray.600'
       justifyContent='space-between'
     >
-      <Pressable onPress={() => { }}>
+      <Pressable onPress={goBack}>
         <Icon
           as={Feather}
           name='arrow-left'
