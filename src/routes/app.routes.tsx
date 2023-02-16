@@ -5,12 +5,14 @@ import { Ionicons, Feather } from '@expo/vector-icons';
 import { Home } from "@screens/Home";
 import { Cart } from "@screens/Cart";
 import { Details } from "@screens/Details";
+import { useCart } from "@hooks/useCart";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
 export function AppRoutes() {
   const { colors, sizes } = useTheme();
-
+  const { cart } = useCart();
+  
   return (
     <Navigator
       screenOptions={{
@@ -36,6 +38,10 @@ export function AppRoutes() {
         component={Cart}
         options={{
           tabBarIcon: ({ color }) => <Feather name='shopping-bag' size={sizes[6]} color={color} />,
+          tabBarBadge: cart.length > 0 ? cart.length : undefined,
+          tabBarBadgeStyle: {
+            backgroundColor: colors.blue[500],
+          }
         }}
       />
       <Screen
