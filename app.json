@@ -23,6 +23,15 @@
       "bundleIdentifier": "com.hsvf.ishoes"
     },
     "description": "iShoes is an online shoes sales app.",
-    "githubUrl": "https://github.com/HelvioFilho/ishoes"
+    "githubUrl": "https://github.com/HelvioFilho/ishoes",
+    "plugins": [
+      [
+        "onesignal-expo-plugin",
+        {
+          "mode": "development",
+          "smallIcons": ["./src/assets/main/notification.png"]
+        }
+      ]
+    ]
   }
 }

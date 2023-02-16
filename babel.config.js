@@ -4,6 +4,12 @@ module.exports = function (api) {
     presets: ['babel-preset-expo'],
     plugins: [
       [
+        'inline-dotenv',
+        {
+          path: '.env',
+        }
+      ],
+      [
         'module-resolver',
         {
           root: ['./src'],
